@@ -1,0 +1,8 @@
+<mat-selection-list #todoList (selectionChange)="onSelectedItem($event)">
+  <mat-list-option *ngFor="let todo of todos" [selected]="todo.status === 'DONE'" [value]="todo">
+    <h3 [class.done]="todo.status === 'DONE'" matLine> {{todo.title}} </h3>
+    <p *ngIf="todo.description" matLine>
+      {{todo.description}}
+    </p>
+  </mat-list-option>
+</mat-selection-list>
